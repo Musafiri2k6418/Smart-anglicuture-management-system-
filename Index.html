@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>AMS Ultra</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>🌾 AMS</h2>
+    <button onclick="toggleTheme()">🌙</button>
+    <ul>
+        <li onclick="show('dashboard')">Dashboard</li>
+        <li onclick="show('farmers')">Farmers</li>
+        <li onclick="show('crops')">Crops</li>
+    </ul>
+</div>
+
+<div class="main">
+
+<!-- Dashboard -->
+<div id="dashboard" class="page active">
+    <h1>Dashboard</h1>
+
+    <div class="cards">
+        <div class="card">Farmers <span id="fCount">0</span></div>
+        <div class="card">Crops <span id="cCount">0</span></div>
+    </div>
+
+    <canvas id="chart"></canvas>
+
+    <img class="banner" src="https://images.unsplash.com/photo-1471193945509-9ad0617afabf">
+</div>
+
+<!-- Farmers -->
+<div id="farmers" class="page">
+    <h1>Farmers</h1>
+
+    <input id="search" placeholder="Search..." onkeyup="searchFarmer()">
+    <button onclick="openModal()">+ Add Farmer</button>
+
+    <ul id="list"></ul>
+</div>
+
+<!-- Crops -->
+<div id="crops" class="page">
+    <h1>Crops</h1>
+    <input id="cropInput">
+    <button onclick="addCrop()">Add</button>
+    <ul id="cropList"></ul>
+</div>
+
+</div>
+
+<!-- MODAL -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <h3>Add Farmer</h3>
+        <input id="name" placeholder="Name">
+        <button onclick="addFarmer()">Save</button>
+        <button onclick="closeModal()">Cancel</button>
+    </div>
+</div>
+
+<!-- TOAST -->
+<div id="toast"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
