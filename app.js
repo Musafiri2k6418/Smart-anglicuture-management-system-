@@ -72,3 +72,6 @@ function toggleTheme(){
 }
 
 render();
+function toggleSidebar(){
+    document.querySelector(".sidebar").classList.toggle("active");
+        } 
